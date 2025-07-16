@@ -1,0 +1,18 @@
+services:
+  ollama:
+    container_name: ollama
+    image: ollama/ollama:rocm
+    volumes:
+      - ollama:/root/.ollama
+    ports:
+      - "11435:11435"
+    environment:
+      - OLLAMA_DEBUG=true
+    restart: ${RESTART_POLICY:-no}
+    devices:
+      - /dev/kfd
+      - /dev/dri
+
+volumes:
+  ollama:
+    external: true
