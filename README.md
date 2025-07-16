@@ -91,7 +91,11 @@ Sin volumen, cada vez que recrees el contenedor tendrías que descargar todos lo
 ## 5. Levantar el servicio
 
 ```bash
-docker compose up -d
+docker compose -f linux-compose.yml up -d
+```
+
+```bash
+docker compose -f windows-compose.yml up -d
 ```
 
 ## 6. Ejecutar ollama
